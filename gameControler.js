@@ -68,7 +68,9 @@ function draw() {
     
     player1._rectangle(player1.x, player1.y, player1.width, player1.height, player1.ctx);
     player2._rectangle(player2.x, player2.y, player2.width, player2.height, player2.ctx);
-    
+
+   //Draw the center line 
+   drawLine(ctx,[canvas.width/2, 0], [canvas.width/2, canvas.height], "white", 10)
     
 }
 
@@ -81,6 +83,22 @@ function circle (ctx,x,y,radius, lineWidth, color) {
     ctx.strokeStyle = color;
     ctx.stroke();
 }
+
+function drawLine(ctx, begin, end, stroke, width) {
+    if (stroke) {
+        ctx.strokeStyle = stroke;
+    }
+
+    if (width) {
+        ctx.lineWidth = width;
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(...begin);
+    ctx.lineTo(...end);
+    ctx.stroke();
+
+    }
 
 
 
