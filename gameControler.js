@@ -12,10 +12,19 @@ const player1 = new Rectangle(canvas.width-60, canvas.height/3,200, 50, speed, s
 const player2 = new Rectangle(0+10, canvas.height/3,200, 50, speed, speed-1);
 
 
-let key;
+let keyP1;
+let keyP2;
 
+//Linstening to the keys for the player1
 document.addEventListener("keydown", function(event) {
-    key = event.keyCode;
+    keyP1 = event.keyCode;
+    
+});
+
+//Linstening to the keys for the player2
+document.addEventListener("keydown", function(event) {
+    keyP2 = event.keyCode;
+    
 })
 
 window.requestAnimationFrame(loop);
@@ -30,18 +39,21 @@ function update() {
 
     
 
-
     if (ball.l3 > player1.l1 && 
         ball.l4 > player1.l2 && 
         ball.l2 < player1.l4) {
+
         ball.speedX = -ball.speedX;
     }
     
     if (ball.l1 < player2.l3 && 
         ball.l4 > player2.l2 && 
         ball.l2 < player2.l4) {
+
         ball.speedX = -ball.speedX;
     }
+
+    
     
 }
 
@@ -50,27 +62,30 @@ function update() {
 function draw() {
 
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
     if (ball.canMove){
         ball.moveBall(scoreP1, scoreP2);
     }
     
-    ball._rectangle(ball.x, ball.y, ball.width, ball.height, ball.ctx)
+    ball._rectangle(ball.x, ball.y, ball.width, ball.height, ball.ctx);
 
-    if (key != undefined) {  
-        player1.movePlayer(key, 38, 40); 
-        player2.movePlayer(key, 87, 83) 
-        
-        key = undefined;
+    if (keyP1 != undefined) {  
+        player1.movePlayer(keyP1, 38, 40); 
+        keyP1 = undefined;
+    }
+
+    if (keyP2 != undefined) { 
+        player2.movePlayer(keyP2, 87, 83); 
+        keyP2 = undefined;
     }
     
     player1._rectangle(player1.x, player1.y, player1.width, player1.height, player1.ctx);
     player2._rectangle(player2.x, player2.y, player2.width, player2.height, player2.ctx);
 
    //Draw the center line 
-   drawLine(ctx,[canvas.width/2, 0], [canvas.width/2, canvas.height], "white", 10)
+   drawLine(ctx,[canvas.width/2-5, 0], [canvas.width/2, canvas.height-5], "white", 10);
     
 }
 
@@ -99,10 +114,4 @@ function drawLine(ctx, begin, end, stroke, width) {
     ctx.stroke();
 
     }
-
-
-
-
-
-
 

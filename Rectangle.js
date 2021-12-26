@@ -92,7 +92,6 @@ class Rectangle {
         this.canMove = true;
     }
 
-
 }
 
 
