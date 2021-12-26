@@ -50,7 +50,7 @@ function update() {
 function draw() {
 
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
     if (ball.canMove){
@@ -61,7 +61,7 @@ function draw() {
 
     if (key != undefined) {  
         player1.movePlayer(key, 38, 40); 
-        player2.movePlayer(key, 87, 83) 
+        player2.movePlayer(key, 87, 83); 
         
         key = undefined;
     }
@@ -70,7 +70,7 @@ function draw() {
     player2._rectangle(player2.x, player2.y, player2.width, player2.height, player2.ctx);
 
    //Draw the center line 
-   drawLine(ctx,[canvas.width/2, 0], [canvas.width/2, canvas.height], "white", 10)
+   drawLine(ctx,[canvas.width/2, 0], [canvas.width/2, canvas.height], "white", 10);
     
 }
 
