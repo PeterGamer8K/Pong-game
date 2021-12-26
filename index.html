@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #game {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #canvas {
+            background-color: black;
+            display: block;
+        }
+
+        .score {
+            display: inline-block;
+            font-size: 100px;
+        }
+
+        
+       
+    </style>
+    <title>pong</title>
+</head>
+<body>  
+    <div id="game">
+        <div id="container">
+            <canvas id="canvas" width="1200" height="800"></canvas> 
+            <p id="scoreP1" class="score">0</p>
+            <p id="scoreP2" class="score">0</p>
+        </div>
+        
+        
+    </div>
+       
+</body>
+<script type="text/javascript" src="Rectangle.js"></script>
+<script type="text/javascript" src="gameControler.js"></script>
+</html>
