@@ -18,6 +18,7 @@ let keyP2;
 //Linstening to the keys for the player1
 document.addEventListener("keydown", function(event) {
     keyP1 = event.keyCode;
+    console.log(keyP1);
     
 });
 
@@ -57,10 +58,9 @@ function update() {
     
 }
 
-
-
 function draw() {
 
+    //Reset canvas
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
